@@ -21,13 +21,7 @@ const products = [
     });
   });
  
-// Función para añadir productos al carrito
-function addToCart(name, price) {
-  cart.push({ name, price });
-  localStorage.setItem('cart', JSON.stringify(cart));
-  alert(`${name} añadido al carrito.`);
-}
- 
+
 // Función para cargar los productos del carrito en carrito.html
 function loadCartItems() {
   const cartItemsContainer = document.querySelector('.cart-items');
