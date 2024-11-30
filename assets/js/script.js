@@ -8,6 +8,7 @@ const products = [
   { id: 4, name: "mesa de noche", price: 300, img: "mesita-de-noche.jpg" },
   { id: 5, name: "lampara", price: 800, img: "lampara-de-escritorio.jpg" },
   { id: 6, name: "tabla para picar de ", price: 250, img: "tabla-picar.jpg" },
+  { id: 7, name: "producto 1",price: 10.000, img: "marine.png"},
   ];
  
   // Agregar producto al carrito
