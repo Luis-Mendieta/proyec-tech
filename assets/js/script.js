@@ -1,22 +1,22 @@
-// Add hover effects to buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('mouseover', () => {
-      button.style.transform = 'scale(1.1)';
-    });
-    button.addEventListener('mouseout', () => {
-      button.style.transform = 'scale(1)';
-    });
-  });
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
  
-  // Add animation to circles on scroll
-  const circles = document.querySelectorAll('.circle');
-  window.addEventListener('scroll', () => {
-    circles.forEach(circle => {
-      const rect = circle.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        circle.style.backgroundColor = '#ff5722';
-      } else {
-        circle.style.backgroundColor = '#ccc';
-      }
-    });
+// Manejo de productos dinámico
+const products = [
+  { id: 1, name: "Laptop", price: 800, img: "laptop.jpg" },
+  { id: 2, name: "Smartphone", price: 600, img: "smartphone.jpg" },
+  { id: 3, name: "Sofá", price: 300, img: "sofa.jpg" },
+  { id: 4, name: "Lámpara", price: 50, img: "lamp.jpg" },
+  { id: 5, name: "Bicicleta", price: 150, img: "bike.jpg" },
+  { id: 6, name: "Balón de fútbol", price: 30, img: "football.jpg" },
+];
+ 
+// Agregar producto al carrito
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', () => {
+    const productId = parseInt(button.dataset.id);
+    const product = products.find(p => p.id === productId);
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${product.name} añadido al carrito.`);
   });
+});
